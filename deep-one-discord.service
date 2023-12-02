@@ -9,5 +9,5 @@ Enviroment=PATH=/usr/bin:/usr/local/bin
 Enviroment=NODE_ENV=production
 WorkingDirectory=/var/www/deep-one-discord
 
-[Instal]
+[Install]
 WantedBy = multi-user.target
