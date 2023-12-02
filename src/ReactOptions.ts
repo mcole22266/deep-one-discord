@@ -24,3 +24,20 @@ export const ttrpgReactionOptions: ReactOption[] = [
         content: "I'm open to running TTRPGs"
     }
 ];
+
+export const otherReactionOptions: ReactOption[] = [
+    {
+        name: 'Video Games',
+        emoji: 'video_game',
+        emoji_unicode: '🎮',
+        role_id: config.ROLES.VIDEO_GAMER.id,
+        content: "I like video games and want to play with others."
+    },
+    {
+        name: 'Golf',
+        emoji: 'golf',
+        emoji_unicode: '⛳',
+        role_id: config.ROLES.GOLFER.id,
+        content: "Put me in a channel where I can talk about golf."
+    }
+];

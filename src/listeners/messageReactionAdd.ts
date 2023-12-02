@@ -7,7 +7,7 @@ import {
     PartialUser,
     User
 } from "discord.js";
-import { ttrpgReactionOptions } from "../ReactOptions";
+import { otherReactionOptions, ttrpgReactionOptions } from "../ReactOptions";
 import { ReactOption } from "src/models/reactions";
 import { config } from "../config";
 
@@ -46,7 +46,8 @@ export default (discordClient: DiscordClient): void => {
         }
 
         // Search for the Role based on the emoji
-        const option: ReactOption | undefined = ttrpgReactionOptions.find((option: ReactOption, index: number) => {
+        const allReactOptions: ReactOption[] = ttrpgReactionOptions.concat(otherReactionOptions);
+        const option: ReactOption | undefined = allReactOptions.find((option: ReactOption, index: number) => {
             if (option.emoji_unicode === reaction.emoji.name) {
                 return true;
             }
