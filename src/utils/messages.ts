@@ -1,32 +1,10 @@
-import { Client as DiscordClient, Emoji, GuildEmoji, Message, MessageReaction, TextChannel } from "discord.js";
+import { Client as DiscordClient, TextChannel } from "discord.js";
 import { config } from "../config";
-
-interface ReactOption {
-    emoji: string,
-    emoji_unicode: string,
-    content: string
-};
+import { ReactOption } from "../models/reactions";
+import { reactOptions } from "../ReactOptions";
 
 export function handleWelcomeMessage(discordClient: DiscordClient): void {
     const channel: TextChannel = discordClient.channels.cache.get(config.CHANNEL_ID_WELCOME) as TextChannel;
-
-    const reactOptions: ReactOption[] = [
-        {
-            emoji: 'dragon',
-            emoji_unicode: '🐉',
-            content: "I'm available for DND One Shots"
-        },
-        {
-            emoji: 'game_die',
-            emoji_unicode: '🎲',
-            content: "I'm available for Non-DND One Shots"
-        },
-        {
-            emoji: 'mage',
-            emoji_unicode: '🧙',
-            content: "I'm open to running TTRPGs"
-        }
-    ]
 
     // Build the message
     const reactOptionsString: string = reactOptions.map((option: ReactOption) => `:${option.emoji}:  \`${option.content}\``).join('\n');
