@@ -29,7 +29,7 @@ export default (discordClient: DiscordClient): void => {
         ]);
 
         // Fetch the channel and send the message
-        const channel: TextChannel = discordClient.channels.cache.get(config.CHANNEL_ID_PLAYGROUND) as TextChannel;
+        const channel: TextChannel = discordClient.channels.cache.get(config.CHANNEL_ID_GENERAL) as TextChannel;
         channel.send(greeting);
 
         console.log(`The following greeting has been extended: ${greeting}.`);
