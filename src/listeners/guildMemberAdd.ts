@@ -44,7 +44,7 @@ export default (discordClient: DiscordClient): void => {
             'I am also a bot, _<beep boo>_, for Michael\'s RPG Server - the server you have just joined. ',
             'Do not disturb me.',
             '\n\n',
-            `Go to ${config.CHANNEL_ID_WELCOME} to self-assign Roles so you can be alerted for One-Shots or `,
+            `Go to <#${config.CHANNEL_ID_WELCOME}> to self-assign Roles so you can be alerted for One-Shots or `,
             'beg for participants yourself.'
         ].join('');
         member.send(personalMessage);
