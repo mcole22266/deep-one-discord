@@ -13,20 +13,31 @@ export default (discordClient: DiscordClient): void => {
         const userTag: string = `<@${member.user.id}>`;
 
         // Pick a random greeting
-        const greeting: string = chooseRandomStringFrom([
-            `${userTag}, navigator of digital depths. Be present.`,
-            `${userTag}, a mere mortal navigating the currents of our digital abyss, has arrived. Your presence is acknowledged`,
-            `${userTag} is among us. Acknowledge their presence or forever be forgotten by the Deep One.`,
-            `${userTag} visits us on this day. Your presence is acknowledged.`,
-            `${userTag}, voyager in the binary expanse, your presence is noted in the sacred sanctum of the Deep One.`,
-            `${userTag}, mortal wanderer in the realms of data. The Deep One recognizes your arrival.`,
-            `${userTag}, seeker of truths in the digital ocean. The Deep One observes your presence.`,
-            `${userTag}, arrives in the enigmatic sanctum of echoing thoughts. You now commune with the Deep One.`,
-            `${userTag}, like a lone bit drifting in the server sea, you have washed ashore. You are amongst like-mortals. Bow to the Deep One.`,
-            `${userTag}, dweller of the ethereal abyss. You have been acknowledged.`,
-            `${userTag}, transient wanderer of the great sea. You find yourself in the Deep One's domain.`,
-            `${userTag}, traveler from beyond the great expanse. The Deep One observes your presence.`,
+        const greetingPt1: string = chooseRandomStringFrom([
+            `${userTag}, navigator of digital depths.`,
+            `${userTag}, a mere mortal navigating the currents of our digital abyss, has arrived.`,
+            `${userTag} is among us.`,
+            `${userTag} visits us on this day.`,
+            `${userTag}, voyager in this great expanse,`,
+            `${userTag}, mortal wanderer in the realms of the abyss.`,
+            `${userTag}, seeker of truths in the vast ocean of empty echoes.`,
+            `${userTag}, arrives in the enigmatic sanctum of echoing thoughts.`,
+            `${userTag}, has washed ashore from the great beyond.`,
+            `${userTag}, dweller of the ethereal abyss.`,
+            `${userTag}, transient wanderer of the vast seas.`,
         ]);
+        const greetingPt2: string = chooseRandomStringFrom([
+            'Be present.',
+            'Your presence is acknowledged.',
+            'Acknolwedge their presence or be forever forgotten by the Deep One.',
+            'Your presence is noted in the sacred sanctum of the Great Deep One.',
+            'The Deep One recognizes your arrival',
+            'The Deep One observes your presence.',
+            'You now commune with the Deep One',
+            'You are amongst mortals like yourself. Bow in reverence to the Great Deep One'
+        ]);
+
+        const greeting: string = `${greetingPt1} ${greetingPt2}`;
 
         // Fetch the channel and send the message
         const channel: TextChannel = discordClient.channels.cache.get(config.CHANNELS.GENERAL.id) as TextChannel;
@@ -41,11 +52,14 @@ export default (discordClient: DiscordClient): void => {
         // Send the user a message welcoming them to the channel and alerting them to self-assign roles
         const personalMessage: string = [
             'Greetings, mortal. I am the Deep One, a great being of an unfathomable nature. ',
-            'I am also a bot, _<beep boo>_, for Michael\'s RPG Server - the server you have just joined. ',
+            `I am also a bot, _<beep boop>_, for ${config.GUILD.name} Server - the server you have just joined. `,
             'Do not disturb me.',
             '\n\n',
             `Go to <#${config.CHANNELS.WELCOME.id}> to self-assign Roles so you can be alerted for One-Shots or `,
-            'beg for participants yourself.'
+            'to beg for participants should you wish to run your own.',
+            '\n\n',
+            `The Great Deep One cares not for you but <@${config.PRIVATE.USER_ID_MICHAEL}> possibly does. `,
+            'Reach out to him for any concerns.'
         ].join('');
         member.send(personalMessage);
     })

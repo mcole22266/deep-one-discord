@@ -5,11 +5,13 @@ dotenv.config();
 const {
     DISCORD_TOKEN,
     DISCORD_CLIENT_ID,
+    USER_ID_MICHAEL
 } = process.env;
 
 if (
     !DISCORD_TOKEN ||
-    !DISCORD_CLIENT_ID
+    !DISCORD_CLIENT_ID ||
+    !USER_ID_MICHAEL
 ) {
     throw new Error("Missing Environment Variables. Check .env file");
 }
@@ -18,6 +20,7 @@ export const config = {
     PRIVATE: {
         DISCORD_TOKEN,
         DISCORD_CLIENT_ID,
+        USER_ID_MICHAEL
     },
     GUILD: {
         name: 'Michael\'s RPGs',
