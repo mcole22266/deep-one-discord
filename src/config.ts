@@ -9,9 +9,12 @@ const {
     GUILD_ID_MICHAEL_DND,
 
     CHANNEL_ID_GENERAL,
+    CHANNEL_ID_WELCOME,
     CHANNEL_ID_PLAYGROUND,
 
     ROLE_CHANNEL_MEMBER,
+
+    MESSAGE_ROLE_SELF_ASSIGN,
 } = process.env;
 
 if (
@@ -21,9 +24,12 @@ if (
     !GUILD_ID_MICHAEL_DND ||
 
     !CHANNEL_ID_GENERAL ||
+    !CHANNEL_ID_WELCOME ||
     !CHANNEL_ID_PLAYGROUND ||
 
-    !ROLE_CHANNEL_MEMBER
+    !ROLE_CHANNEL_MEMBER ||
+
+    !MESSAGE_ROLE_SELF_ASSIGN
 ) {
     throw new Error("Missing Environment Variables. Check .env file");
 }
@@ -35,7 +41,10 @@ export const config = {
     GUILD_ID_MICHAEL_DND,
 
     CHANNEL_ID_GENERAL,
+    CHANNEL_ID_WELCOME,
     CHANNEL_ID_PLAYGROUND,
 
-    ROLE_CHANNEL_MEMBER
+    ROLE_CHANNEL_MEMBER,
+
+    MESSAGE_ROLE_SELF_ASSIGN,
 };
