@@ -33,5 +33,9 @@ export default (discordClient: DiscordClient): void => {
         channel.send(greeting);
 
         console.log(`The following greeting has been extended: ${greeting}.`);
+
+        // Grant user the Channel Member Role automatically
+        member.roles.add(config.ROLE_CHANNEL_MEMBER);
+        console.log(`Granted ${member.user.username} the "Channel Member" role`);
     })
 }
