@@ -9,6 +9,8 @@ export const Hello: Command = {
     description: DESCRIPTION,
     type: ApplicationCommandType.ChatInput,
     run: async (discordClient: DiscordClient, interaction: CommandInteraction) => {
+        console.log(`Running Command: Hello for user ${interaction.user.username}`);
+
         const content = 'Greetings, mortal.';
 
         await interaction.followUp({
