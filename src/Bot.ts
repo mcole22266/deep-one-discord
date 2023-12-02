@@ -30,6 +30,6 @@ messageReactionRemove(discordClient);
 
 // Login with the Bot
 console.log('Logging in');
-discordClient.login(config.DISCORD_TOKEN);
+discordClient.login(config.PRIVATE.DISCORD_TOKEN);
 
 console.log('Bot is ready...');

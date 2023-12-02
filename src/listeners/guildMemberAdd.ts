@@ -29,13 +29,13 @@ export default (discordClient: DiscordClient): void => {
         ]);
 
         // Fetch the channel and send the message
-        const channel: TextChannel = discordClient.channels.cache.get(config.CHANNEL_ID_GENERAL) as TextChannel;
+        const channel: TextChannel = discordClient.channels.cache.get(config.CHANNELS.GENERAL.id) as TextChannel;
         channel.send(greeting);
 
         console.log(`The following greeting has been extended: ${greeting}.`);
 
         // Grant user the Channel Member Role automatically
-        member.roles.add(config.ROLE_CHANNEL_MEMBER);
+        member.roles.add(config.ROLES.CHANNEL_MEMBER.id);
         console.log(`Granted ${member.user.username} the "Channel Member" role`);
 
         // Send the user a message welcoming them to the channel and alerting them to self-assign roles
@@ -44,7 +44,7 @@ export default (discordClient: DiscordClient): void => {
             'I am also a bot, _<beep boo>_, for Michael\'s RPG Server - the server you have just joined. ',
             'Do not disturb me.',
             '\n\n',
-            `Go to <#${config.CHANNEL_ID_WELCOME}> to self-assign Roles so you can be alerted for One-Shots or `,
+            `Go to <#${config.CHANNELS.WELCOME.id}> to self-assign Roles so you can be alerted for One-Shots or `,
             'beg for participants yourself.'
         ].join('');
         member.send(personalMessage);

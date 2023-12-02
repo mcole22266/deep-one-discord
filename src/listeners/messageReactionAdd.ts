@@ -7,7 +7,7 @@ import {
     PartialUser,
     User
 } from "discord.js";
-import { reactOptions } from "../ReactOptions";
+import { ttrpgReactionOptions } from "../ReactOptions";
 import { ReactOption } from "src/models/reactions";
 import { config } from "../config";
 
@@ -41,12 +41,12 @@ export default (discordClient: DiscordClient): void => {
         }
 
         // Ensure the message is the Role Self-Assignment Message
-        if (reaction.message.id !== config.MESSAGE_ROLE_SELF_ASSIGN) {
+        if (reaction.message.id !== config.MESSAGES.SELF_ASSIGN_ROLES.id) {
             return;
         }
 
         // Search for the Role based on the emoji
-        const option: ReactOption | undefined = reactOptions.find((option: ReactOption, index: number) => {
+        const option: ReactOption | undefined = ttrpgReactionOptions.find((option: ReactOption, index: number) => {
             if (option.emoji_unicode === reaction.emoji.name) {
                 return true;
             }
