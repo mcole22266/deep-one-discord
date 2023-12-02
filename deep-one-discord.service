@@ -1,0 +1,13 @@
+[Unit]
+Description = A Discord Bot
+
+[Service]
+ExecStart = /var/www/deep-one-discord/start-bot.sh
+Restart=always
+Group=nogroup
+Enviroment=PATH=/usr/bin:/usr/local/bin
+Enviroment=NODE_ENV=production
+WorkingDirectory=/var/www/deep-one-discord
+
+[Instal]
+WantedBy = multi-user.target
