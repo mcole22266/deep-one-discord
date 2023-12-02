@@ -37,5 +37,16 @@ export default (discordClient: DiscordClient): void => {
         // Grant user the Channel Member Role automatically
         member.roles.add(config.ROLE_CHANNEL_MEMBER);
         console.log(`Granted ${member.user.username} the "Channel Member" role`);
+
+        // Send the user a message welcoming them to the channel and alerting them to self-assign roles
+        const personalMessage: string = [
+            'Greetings, mortal. I am the Deep One, a great being of an unfathomable nature. ',
+            'I am also a bot, _<beep boo>_, for Michael\'s RPG Server - the server you have just joined. ',
+            'Do not disturb me.',
+            '\n\n',
+            `Go to ${config.CHANNEL_ID_WELCOME} to self-assign Roles so you can be alerted for One-Shots or `,
+            'beg for participants yourself.'
+        ].join('');
+        member.send(personalMessage);
     })
 }
