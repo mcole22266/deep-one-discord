@@ -43,8 +43,8 @@ export const config = {
             name: 'available-to-play',
             id: '1180373982403375144'
         },
-        RIME_OF_THE_FROSTMAIDEN: {
-            name: 'rime-of-the-frostmaiden',
+        CURSE_OF_STRAHD: {
+            name: 'curse-of-strahd',
             id: '1097662730258878494'
         },
         CALL_OF_CTHULHU: {
@@ -81,8 +81,8 @@ export const config = {
             name: 'Oneshots - Other',
             id: '1180356440511230044',
         },
-        RIME_OF_THE_FROSTMAIDEN: {
-            name: 'Rime of the Frostmaiden',
+        CURSE_OF_STRAHD: {
+            name: 'Curse of Strahd',
             id: '1079201850659708958'
         },
         CALL_OF_CTHULHU: {
